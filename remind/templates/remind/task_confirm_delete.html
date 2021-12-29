@@ -1,0 +1,27 @@
+{% extends 'remind/base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    <table class="table">
+        <tr>
+            <th>タイトル</th>
+            <td>{{ task.subject}}</td>
+        </tr>
+        <tr>
+            <th>内容</th>
+            <td>{{ task.contents}}</td>
+        </tr>
+        <tr>
+            <th>日付</th>
+            <td>{{ task.date }}</td>
+        </tr>
+        <tr>
+            <th>担当者</th>
+            <td>{{ task.name }}</td>
+        </tr>
+    </table>
+    <p>こちらのデータを削除します。</p>
+    <button type="submit" class="btn btn-primary">送信</button>
+    {% csrf_token %}
+</form>
+{% endblock %}

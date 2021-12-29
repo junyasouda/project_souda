@@ -1,0 +1,27 @@
+{% extends 'remind/base.html' %}
+
+{% block content %}
+<p>{{task.title}}</p>
+<form action="" method="POST">
+    <table class="table">
+        <tr>
+            <th>タイトル</th>
+            <td>{{ form.subject}}</td>
+        </tr>
+        <tr>
+            <th>内容</th>
+            <td>{{ form.contents}}</td>
+        </tr>
+        <tr>
+            <th>日付</th>
+            <td>{{ form.date }}</td>
+        </tr>
+        <tr>
+            <th>担当者</th>
+            <td>{{ form.name }}</td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">送信</button>
+    {% csrf_token %}
+</form>
+{% endblock %}
